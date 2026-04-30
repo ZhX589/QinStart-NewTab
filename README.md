@@ -22,7 +22,7 @@
 
 ## 项目结构
 
-\`\`\`
+```
 QinStart-NewTab/
 ├── manifest.json           # 插件配置
 ├── QinStartNewTaab.html    # 新标签页主页面
@@ -31,7 +31,7 @@ QinStart-NewTab/
 │   ├── icon-96.png
 │   └── icon-svg.svg        # 图标源文件
 └── README.md
-\`\`\`
+```
 
 ## 自定义图标
 
