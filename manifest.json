@@ -22,7 +22,7 @@
   "permissions": [],
 
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; connect-src https://v1.hitokoto.cn; img-src 'self' data:;"
+    "extension_pages": "script-src 'self'; style-src 'self' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; connect-src https://v1.hitokoto.cn; img-src 'self' data: blob:;"
   },
 
   "icons": {
