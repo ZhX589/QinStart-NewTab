@@ -1,0 +1,33 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Build
+        run: |
+          chmod +x ./build.sh
+          ./build.sh
+
+      - name: Create Release and Upload
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          gh release create "$TAG_NAME" \
+            --title "轻启标签页 $TAG_NAME" \
+            --generate-notes \
+            QinStart-NewTab_Firefox.xpi \
+            QinStart-NewTab_GoogleChrome.zip \
+            QinStart-NewTab_Edge.zip

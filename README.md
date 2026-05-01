@@ -14,23 +14,40 @@
 ## 安装 (开发模式)
 
 1. 下载或克隆本仓库
-2. 打开 Firefox，地址栏输入 `about:debugging`，回车
-3. 点击左侧 **"此 Firefox"**
-4. 点击 **"临时载入附加组件…"**
-5. 选择本目录下的 `manifest.json` 文件
-6. 完成！新标签页和主页将自动被替换
+2. 运行构建脚本
+```bash
+chmod +x ./build.sh
+./build.sh
+```
+3. 找到对应浏览器的拓展包，在对应浏览器拓展页面安装。
+
+## 安装 
+
+- [x] 前往Realise页面下载对应拓展包在浏览器拓展页面安装（提供Firefox、Google Chrome、Microsoft Edge）三个版本
+- [ ] 前往Firefox扩展页面安装
 
 ## 项目结构
 
-```
-QinStart-NewTab/
-├── manifest.json           # 插件配置
-├── QinStartNewTaab.html    # 新标签页主页面
-├── icons/
-│   ├── icon-48.png
-│   ├── icon-96.png
-│   └── icon-svg.svg        # 图标源文件
-└── README.md
+```plaintext
+QinStart-NewTab
+├── build.sh
+├── LICENSE
+├── manifest-edge.json
+├── QinStart-NewTab_Edge.zip
+├── QinStart-NewTab_Firefox.xpi
+├── QinStart-NewTab_GoogleChrome.zip
+├── README.md
+└── src
+    ├── icons
+    │   ├── icon-48.png
+    │   ├── icon-96.png
+    │   └── icon.svg
+    ├── main.js
+    ├── manifest.json
+    ├── QinStartNewTaab.html
+    └── style.css
+
+3 directories, 14 files
 ```
 
 ## 自定义图标
@@ -38,7 +55,7 @@ QinStart-NewTab/
 `icons/` 文件夹中必须包含 `icon-48.png` 和 `icon-96.png`。
 
 你可以：
-- 使用提供的 `icon-svg.svg` 导出 PNG
+- 使用提供的 `icon.svg` 导出 PNG
 - 或使用任意 48×48 与 96×96 的 PNG 图片作为图标
 
 ## 技术说明
